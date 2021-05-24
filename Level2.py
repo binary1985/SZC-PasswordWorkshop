@@ -1,6 +1,6 @@
 import hashlib, sys
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
 	print ("Usage is: " +sys.argv[0]+" <input hashlist> <input wordlist>")
 	sys.exit()
 
