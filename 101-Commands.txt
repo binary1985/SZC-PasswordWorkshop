@@ -1,11 +1,14 @@
-git clone https://github.com/hashcat/hashcat.git
-cd hashcat
-make install
+git clone https://github.com/hashcat/hashcat.git
+cd hashcat
+make install
+sudo su
+apt-get update
 apt-get install libhwloc-dev ocl-icd-dev ocl-icd-opencl-dev
 apt-get install pocl-opencl-icd
 
+Unzip rockyou
 gunzip /usr/share/wordlists/rockyou.txt.gz
-mv /usr/share/wordlists/rockyou.txt .
+mv /usr/share/wordlists/rockyou.txt .
 
 cd
 git clone https://github.com/binary1985/SZC-PasswordWorkshop.git 
