@@ -1,0 +1,20 @@
+git clone https://github.com/hashcat/hashcat.git
+cd hashcat
+make install
+apt-get install libhwloc-dev ocl-icd-dev ocl-icd-opencl-dev
+apt-get install pocl-opencl-icd
+
+gunzip /usr/share/wordlists/rockyou.txt.gz
+mv /usr/share/wordlists/rockyou.txt .
+
+cd
+git clone https://github.com/binary1985/SZC-PasswordWorkshop.git 
+cp SZC-PasswordWorkshop/* hashcat/
+
+./hashcat -a 0 -m 1000 101-Hashes.txt rockyou.txt
+./hashcat -a 0 -m 0 101-Hashes.txt rockyou.txt -r rules/best64.rule
+./hashcat -a 3 -m 0 101-Hashes.txt ?d?d?d?d?u?l?l?s
+./hashcat -a 1 -m 0 101-Hashes.txt /usr/share/wordlists/metasploit/keyboard-patterns.txt /usr/share/wordlists/metasploit/password.lst
+./hashcat -a 6 -m 0 101-Hashes.txt rockyou.txt ?a?a
+
+./hashcat -m 0 101-Hashes.txt --show
